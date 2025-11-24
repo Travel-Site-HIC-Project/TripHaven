@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Find the best travel discounts">
+    <title>Trip Haven: Discounts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none
+        }
+
+        .discount-card {
+            transition: transform 0.2s;
+        }
+
+        .discount-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .sticky-note {
+            background: #ffd966;
+            padding: 20px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            transform: rotate(-2deg);
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .sticky-note::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 40px 40px 0;
+            border-color: transparent #dc3545 transparent transparent;
+        }
+
+        .search-section {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .sort-btn {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="chevron-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+            </path>
+        </symbol>
+        <symbol id="cart" viewBox="0 0 16 16">
+            <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
+            </path>
+        </symbol>
+    </svg>
+
+    <div class="container">
+        <header class="border-bottom lh-1 py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-4 pt-1">
+                    <a class="link-secondary" href="#"></a>
+                </div>
+                <div class="col-4 text-center">
+                    <a class="blog-header-logo text-body-emphasis text-decoration-none" href="index.html">TripHaven</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="link-secondary" href="#" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="mx-3" role="img" viewBox="0 0 24 24">
+                            <title>Search</title>
+                            <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                            <path d="M21 21l-5.2-5.2"></path>
+                        </svg>
+                    </a>
+                    <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="nav-scroller py-1 mb-3 border-bottom">
+            <nav class="nav nav-underline justify-content-between">
+                <a class="nav-item nav-link link-body-emphasis" href="travel.html">Travel</a>
+                <a class="nav-item nav-link link-body-emphasis" href="reviews.html">Reviews</a>
+                <a class="nav-item nav-link link-body-emphasis" href="suggested_flights.html">Suggested Flights</a>
+                <a class="nav-item nav-link link-body-emphasis active" href="discounts.html">Discounts</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container">
+        <h1 class="mb-4">Search for your Discount!</h1>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="row mb-3">
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="discountSearch" placeholder="Search discounts...">
+                </div>
+                <div class="col-md-4 d-flex align-items-center">
+                    <button class="btn btn-primary w-100" onclick="searchDiscounts()">Search</button>
+                </div>
+            </div>
+
+            <!-- Sort Options -->
+            <div class="mb-3">
+                <strong>Sort by:</strong>
+                <button class="btn btn-sm btn-outline-primary sort-btn" onclick="sortBy('price')">Price</button>
+                <button class="btn btn-sm btn-outline-primary sort-btn" onclick="sortBy('location')">Location</button>
+                <button class="btn btn-sm btn-outline-primary sort-btn" onclick="sortBy('time')">Time</button>
+                <button class="btn btn-sm btn-outline-primary sort-btn" onclick="sortBy('availability')">Availability</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Left Column - Discount Offers -->
+            <div class="col-md-8">
+                <h3 class="mb-4">Available Discounts</h3>
+                <div id="discountList">
+                    <!-- Discount Offer 1 -->
+                    <div class="card mb-3 discount-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <span class="badge bg-danger mb-2">30% OFF</span>
+                                    <h5 class="card-title">Caribbean Paradise Package</h5>
+                                    <p class="text-muted">Valid until: December 31, 2025</p>
+                                    <p class="card-text">Experience the stunning beaches of Jamaica with all-inclusive resort stay. Includes flights, accommodation, and meals.</p>
+                                    <p class="text-success fw-bold">Was $1,999 - Now $1,399</p>
+                                </div>
+                                <button class="btn btn-primary" onclick="addToCart('Caribbean Paradise')">
+                                    <svg class="bi" width="20" height="20">
+                                        <use xlink:href="#cart"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Discount Offer 2 -->
+                    <div class="card mb-3 discount-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <span class="badge bg-danger mb-2">25% OFF</span>
+                                    <h5 class="card-title">European Adventure Tour</h5>
+                                    <p class="text-muted">Valid until: January 15, 2026</p>
+                                    <p class="card-text">Explore Paris, Rome, and Barcelona in one amazing trip. Guided tours and hotel stays included.</p>
+                                    <p class="text-success fw-bold">Was $2,499 - Now $1,874</p>
+                                </div>
+                                <button class="btn btn-primary" onclick="addToCart('European Adventure')">
+                                    <svg class="bi" width="20" height="20">
+                                        <use xlink:href="#cart"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Discount Offer 3 -->
+                    <div class="card mb-3 discount-card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <span class="badge bg-danger mb-2">40% OFF</span>
+                                    <h5 class="card-title">Asian Cultural Experience</h5>
+                                    <p class="text-muted">Valid until: November 30, 2025</p>
+                                    <p class="card-text">Discover the wonders of Thailand and Vietnam. Temples, cuisine, and culture await!</p>
+                                    <p class="text-success fw-bold">Was $1,799 - Now $1,079</p>
+                                </div>
+                                <button class="btn btn-primary" onclick="addToCart('Asian Cultural')">
+                                    <svg class="bi" width="20" height="20">
+                                        <use xlink:href="#cart"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Focused Discounts -->
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 2rem;">
+                    <h4 class="mb-3">Focused Discounts</h4>
+                    
+                    <div class="sticky-note position-relative mb-4">
+                        <p class="mb-0 fw-bold">Use location and cart to display related discounts</p>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h6 class="card-title">Based on Your Location</h6>
+                            <p class="text-muted small">Kent, Ohio</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none">🏖️ Cleveland to Miami - 35% off</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="#" class="text-decoration-none">✈️ Local Airport Deals</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-title">Shopping Cart Summary</h6>
+                            <div id="cartSummary">
+                                <p class="text-muted">Your cart is empty</p>
+                            </div>
+                            <button class="btn btn-success w-100 mt-2" onclick="viewCart()">View Cart</button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline-secondary w-100 mt-3" onclick="showHelp()">Help</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-5 text-center text-body-secondary bg-body-tertiary mt-5">
+        <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a
+                href="https://x.com/mdo">@mdo</a>.</p>
+        <p class="mb-0"><a href="#">Back to top</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+        let cart = [];
+
+        function searchDiscounts() {
+            const searchTerm = document.getElementById('discountSearch').value.toLowerCase();
+            const discountCards = document.querySelectorAll('.discount-card');
+            
+            discountCards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function sortBy(criteria) {
+            alert(`Sorting by ${criteria}...`);
+        }
+
+        function addToCart(itemName) {
+            cart.push(itemName);
+            updateCartSummary();
+            alert(`${itemName} added to cart!`);
+        }
+
+        function updateCartSummary() {
+            const cartSummary = document.getElementById('cartSummary');
+            if (cart.length === 0) {
+                cartSummary.innerHTML = '<p class="text-muted">Your cart is empty</p>';
+            } else {
+                cartSummary.innerHTML = `<p><strong>${cart.length}</strong> item(s) in cart</p>`;
+            }
+        }
+
+        function viewCart() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+            } else {
+                alert('Cart items:\n' + cart.join('\n'));
+            }
+        }
+
+        function showHelp() {
+            alert('Help: Browse discounts, add items to your cart, and book your dream vacation!\n\nNeed assistance? Contact us at support@triphaven.com');
+        }
+
+        document.getElementById('discountSearch').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                searchDiscounts();
+            }
+        });
+    </script>
+</body>
+
+</html>
