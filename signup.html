@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sign in to TripHaven">
+    <title>Trip Haven: Sign In</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #1a1a1a;
+            min-height: 100vh;
+        }
+
+        .signin-section {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600') center/cover;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-header {
+            background: #1a1a1a;
+            border-bottom: 1px solid #333;
+            padding: 15px 0;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .search-icon {
+            color: #999;
+            cursor: pointer;
+        }
+
+        .signup-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            border: 1px solid #666;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .signup-link:hover {
+            background: #333;
+            color: white;
+        }
+
+        .nav-scroller {
+            background: #1a1a1a;
+            border-bottom: 1px solid #333;
+        }
+
+        .nav-scroller .nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav-item {
+            color: #999;
+            text-decoration: none;
+            padding: 15px 0;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            color: white;
+            border-bottom-color: white;
+        }
+
+        .signin-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .signin-box {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 50px 60px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .signin-box h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: white;
+            color: #333;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+        }
+
+        .signin-button {
+            width: 100%;
+            padding: 15px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+
+        .signin-button:hover {
+            background: #555;
+        }
+
+        .additional-links {
+            margin-top: 25px;
+            text-align: center;
+            color: #333;
+        }
+
+        .additional-links a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        .additional-links a:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            margin: 30px 0;
+            text-align: center;
+            position: relative;
+            color: #666;
+        }
+
+        .divider::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background: #ccc;
+        }
+
+        .divider::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background: #ccc;
+        }
+
+        .social-signin {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-button {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+            color: #333;
+        }
+
+        .social-button:hover {
+            background: #f8f9fa;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #999;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #333;
+        }
+
+        footer a {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="signin-section">
+        <!-- Top Header -->
+        <div class="top-header">
+            <div class="header-content">
+                <a href="index.html" class="logo">TripHaven</a>
+                <div class="header-right">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="search-icon" role="img" viewBox="0 0 24 24">
+                        <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                        <path d="M21 21l-5.2-5.2"></path>
+                    </svg>
+                    <a href="signin.html" class="signup-link">Sign up</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="nav-scroller">
+            <nav class="nav">
+                <a class="nav-item" href="travel.html">Travel</a>
+                <a class="nav-item" href="reviews.html">Reviews</a>
+                <a class="nav-item" href="suggested_flights.html">Suggested Flights</a>
+                <a class="nav-item" href="discounts.html">Discounts</a>
+            </nav>
+        </div>
+
+        <!-- Sign In Form -->
+        <div class="signin-container">
+            <div class="signin-box">
+                <h1>Sign In</h1>
+                
+                <form onsubmit="handleSignIn(event)">
+                    <div class="form-group">
+                        <label class="form-label" for="username">Username</label>
+                        <input type="text" id="username" class="form-input" placeholder="Enter your username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <input type="password" id="password" class="form-input" placeholder="Enter your password" required>
+                    </div>
+
+                    <button type="submit" class="signin-button">Sign In</button>
+                </form>
+
+                <div class="additional-links">
+                    <p>Don't have an account? <a href="signin.html">Sign up</a></p>
+                    <p><a href="#">Forgot password?</a></p>
+                </div>
+
+                <div class="divider">OR</div>
+
+                <div class="social-signin">
+                    <button class="social-button" onclick="socialSignIn('Google')">Google</button>
+                    <button class="social-button" onclick="socialSignIn('Facebook')">Facebook</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Cover template built for <a href="https://getbootstrap.com/">Bootstrap</a>.</p>
+        <p><a href="#">Back to top</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function handleSignIn(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) {
+                alert(`Welcome back, ${username}!\n\nYou have successfully signed in.`);
+                window.location.href = 'index.html';
+            }
+        }
+
+        function socialSignIn(provider) {
+            alert(`Signing in with ${provider}...\n\nThis feature will connect to ${provider} authentication.`);
+        }
+    </script>
+</body>
+
+</html>
