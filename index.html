@@ -7,26 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Astro v5.13.2">
-    <title>Trip Haven: Home</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
-    <script src="Blog%20Template%20%C2%B7%20Bootstrap%20v5.3_files/color-modes.js"></script>
-    <link href="Blog%20Template%20%C2%B7%20Bootstrap%20v5.3_files/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB">
-    <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/apple-touch-icon.png"
-        sizes="180x180">
-    <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32"
-        type="image/png">
-    <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16"
-        type="image/png">
-    <link rel="manifest" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/manifest.json">
-    <link rel="mask-icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/safari-pinned-tab.svg"
-        color="#712cf9">
-    <link rel="icon" href="https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon.ico">
-    <meta name="theme-color" content="#712cf9">
-    <link href="Blog%20Template%20%C2%B7%20Bootstrap%20v5.3_files/css.css" rel="stylesheet">
-    <link href="Blog%20Template%20%C2%B7%20Bootstrap%20v5.3_files/blog.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -40,26 +21,6 @@
             .bd-placeholder-img-lg {
                 font-size: 3.5rem
             }
-        }
-
-        .b-example-divider {
-            width: 100%;
-            height: 3rem;
-            background-color: #0000001a;
-            border: solid rgba(0, 0, 0, .15);
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em #0000001a, inset 0 .125em .5em #00000026
-        }
-
-        .b-example-vr {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 100vh
-        }
-
-        .bi {
-            vertical-align: -.125em;
-            fill: currentColor
         }
 
         .nav-scroller {
@@ -80,69 +41,30 @@
             -webkit-overflow-scrolling: touch
         }
 
-        .btn-bd-primary {
-            --bd-violet-bg: #712cf9;
-            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-            --bs-btn-font-weight: 600;
-            --bs-btn-color: var(--bs-white);
-            --bs-btn-bg: var(--bd-violet-bg);
-            --bs-btn-border-color: var(--bd-violet-bg);
-            --bs-btn-hover-color: var(--bs-white);
-            --bs-btn-hover-bg: #6528e0;
-            --bs-btn-hover-border-color: #6528e0;
-            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-            --bs-btn-active-color: var(--bs-btn-hover-color);
-            --bs-btn-active-bg: #5a23c8;
-            --bs-btn-active-border-color: #5a23c8
+        .package-image {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
         }
 
-        .bd-mode-toggle {
-            z-index: 1500
+        .review-image {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
         }
 
-        .bd-mode-toggle .bi {
-            width: 1em;
-            height: 1em
-        }
-
-        .bd-mode-toggle .dropdown-menu .active .bi {
-            display: block !important
+        .sidebar-image {
+            width: 100%;
+            height: 96px;
+            object-fit: cover;
+            border-radius: 5px;
         }
     </style>
 </head>
 
-<body> <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-        <symbol id="check2" viewBox="0 0 16 16">
-            <path
-                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z">
-            </path>
-        </symbol>
-        <symbol id="circle-half" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
-        </symbol>
-        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-            <path
-                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z">
-            </path>
-            <path
-                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z">
-            </path>
-        </symbol>
-        <symbol id="sun-fill" viewBox="0 0 16 16">
-            <path
-                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z">
-            </path>
-        </symbol>
-    </svg>
-
-    </div> <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-        <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path
-                d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94">
-            </path>
-        </symbol>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="cart" viewBox="0 0 16 16">
             <path
                 d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
@@ -154,295 +76,259 @@
             </path>
         </symbol>
     </svg>
+
     <div class="container">
         <header class="border-bottom lh-1 py-3">
             <div class="row flex-nowrap justify-content-between align-items-center">
                 <div class="col-4 pt-1"> <a class="link-secondary" href="#"></a> </div>
-                <div class="col-4 text-center"> <a class="blog-header-logo text-body-emphasis text-decoration-none"
-                        href="#">TripHaven</a> </div>
-                <div class="col-4 d-flex justify-content-end align-items-center"> <a class="link-secondary" href="#"
-                        aria-label="Search"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+                <div class="col-4 text-center"> 
+                    <a class="blog-header-logo text-body-emphasis text-decoration-none" href="index.html">TripHaven</a> 
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center"> 
+                    <a class="link-secondary" href="#" aria-label="Search"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
                             stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             class="mx-3" role="img" viewBox="0 0 24 24">
                             <title>Search</title>
                             <circle cx="10.5" cy="10.5" r="7.5"></circle>
                             <path d="M21 21l-5.2-5.2"></path>
-                        </svg> </a> <a class="btn btn-sm btn-outline-secondary" href="signup.html">Sign up</a> </div>
+                        </svg> 
+                    </a> 
+                    <a class="link-secondary me-3" href="cart.html" aria-label="Cart">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>
+                    </a> 
+                    <a class="btn btn-sm btn-outline-secondary" href="signup.html">Sign up</a> 
+                </div>
             </div>
         </header>
+        
         <div class="nav-scroller py-1 mb-3 border-bottom">
-            <nav class="nav nav-underline justify-content-between"> <a
-                    class="nav-item nav-link link-body-emphasis" href="travel.html">Travel</a>  
-                    <a
-                    class="nav-item nav-link link-body-emphasis" href="reviews.html">Reviews</a>  
-                    <a
-                    class="nav-item nav-link link-body-emphasis" href="suggested_flights.html">Suggested Flights</a>  
-                    <a
-                    class="nav-item nav-link link-body-emphasis" href="discounts.html">Discounts</a>  
-                    </nav>
+            <nav class="nav nav-underline justify-content-between"> 
+                <a class="nav-item nav-link link-body-emphasis" href="travel.html">Travel</a>  
+                <a class="nav-item nav-link link-body-emphasis" href="reviews.html">Reviews</a>  
+                <a class="nav-item nav-link link-body-emphasis" href="suggested_flights.html">Suggested Flights</a>  
+                <a class="nav-item nav-link link-body-emphasis" href="discounts.html">Discounts</a>  
+            </nav>
         </div>
     </div>
+
     <main class="container">
-        
         <div class="row mb-2">
-            <!--Travel Package Cards -->
-            <!--fill in the stuff with text from the javascrip? -->
-
+            <!-- Package 1 -->
             <div class="col-md-6">
-                <div
-                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static"> <strong
-                            class="d-inline-block mb-2 text-primary-emphasis">Travel Package</strong>
-                        <h3 class="mb-0">Travel Package Name</h3>
-                        <div class="mb-1 text-body-secondary">cutoff date?</div>
-                        <p class="card-text mb-auto">description of the travel package</p> <a href="#"
-                            class="icon-link gap-1 icon-link-hover stretched-link">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static"> 
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">Travel Package</strong>
+                        <h3 class="mb-0">Caribbean Paradise</h3>
+                        <div class="mb-1 text-body-secondary">Valid until: Dec 31, 2025</div>
+                        <p class="card-text mb-auto">Experience pristine beaches and crystal-clear waters in Jamaica. All-inclusive resort with meals, drinks, and water sports included.</p> 
+                        <a href="cart.html" class="icon-link gap-1 icon-link-hover stretched-link">
                             Book Now
                             <svg class="bi" aria-hidden="true">
                                 <use xlink:href="#chevron-right"></use>
-                            </svg> </a>
+                            </svg> 
+                        </a>
                     </div>
-                    <div class="col-auto d-none d-lg-block"> <svg aria-label="Placeholder: Thumbnail"
-                            class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img"
-                            width="200" xmlns="http://www.w3.org/2000/svg">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg> </div>
+                    <div class="col-auto d-none d-lg-block"> 
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400" alt="Caribbean Beach" class="package-image">
+                    </div>
                 </div>
             </div>
+
+            <!-- Package 2 -->
             <div class="col-md-6">
-                <div
-                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static"> <strong
-                            class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-                        <h3 class="mb-0">Post title</h3>
-                        <div class="mb-1 text-body-secondary">Nov 11</div>
-                        <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to
-                            additional content.</p> <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static"> 
+                        <strong class="d-inline-block mb-2 text-success-emphasis">Featured Deal</strong>
+                        <h3 class="mb-0">European Adventure</h3>
+                        <div class="mb-1 text-body-secondary">Valid until: Jan 15, 2026</div>
+                        <p class="mb-auto">Explore Paris, Rome, and Barcelona in 10 unforgettable days. Guided tours, hotels, and transportation included.</p> 
+                        <a href="cart.html" class="icon-link gap-1 icon-link-hover stretched-link">
                             Book Now
                             <svg class="bi" aria-hidden="true">
                                 <use xlink:href="#chevron-right"></use>
-                            </svg> </a>
+                            </svg> 
+                        </a>
                     </div>
-                    <div class="col-auto d-none d-lg-block"> <svg aria-label="Placeholder: Thumbnail"
-                            class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img"
-                            width="200" xmlns="http://www.w3.org/2000/svg">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg> </div>
+                    <div class="col-auto d-none d-lg-block"> 
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400" alt="Paris" class="package-image">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row mb-2">
-            <!--Travel Package Cards -->
-            <!--fill in the stuff with text from the javascrip? -->
 
+        <div class="row mb-2">
+            <!-- Package 3 -->
             <div class="col-md-6">
-                <div
-                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static"> <strong
-                            class="d-inline-block mb-2 text-primary-emphasis">Travel Package</strong>
-                        <h3 class="mb-0">Travel Package Name</h3>
-                        <div class="mb-1 text-body-secondary">cutoff date?</div>
-                        <p class="card-text mb-auto">description of the travel package</p> <a href="#"
-                            class="icon-link gap-1 icon-link-hover stretched-link">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static"> 
+                        <strong class="d-inline-block mb-2 text-warning-emphasis">Hot Offer</strong>
+                        <h3 class="mb-0">Asian Discovery</h3>
+                        <div class="mb-1 text-body-secondary">Valid until: Nov 30, 2025</div>
+                        <p class="card-text mb-auto">Discover Thailand and Vietnam's rich culture, temples, and cuisine. Perfect for families and adventurers alike.</p> 
+                        <a href="cart.html" class="icon-link gap-1 icon-link-hover stretched-link">
                             Book Now
                             <svg class="bi" aria-hidden="true">
                                 <use xlink:href="#chevron-right"></use>
-                            </svg> </a>
+                            </svg> 
+                        </a>
                     </div>
-                    <div class="col-auto d-none d-lg-block"> <svg aria-label="Placeholder: Thumbnail"
-                            class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img"
-                            width="200" xmlns="http://www.w3.org/2000/svg">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg> </div>
+                    <div class="col-auto d-none d-lg-block"> 
+                        <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=400" alt="Thailand Temple" class="package-image">
+                    </div>
                 </div>
             </div>
+
+            <!-- Package 4 -->
             <div class="col-md-6">
-                <div
-                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static"> <strong
-                            class="d-inline-block mb-2 text-success-emphasis">Design</strong>
-                        <h3 class="mb-0">Post title</h3>
-                        <div class="mb-1 text-body-secondary">Nov 11</div>
-                        <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to
-                            additional content.</p> <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static"> 
+                        <strong class="d-inline-block mb-2 text-danger-emphasis">Limited Time</strong>
+                        <h3 class="mb-0">Mountain Retreat</h3>
+                        <div class="mb-1 text-body-secondary">Valid until: Feb 28, 2026</div>
+                        <p class="mb-auto">Escape to the Swiss Alps for skiing, hiking, and breathtaking mountain views. Cozy lodges and gourmet dining await.</p> 
+                        <a href="cart.html" class="icon-link gap-1 icon-link-hover stretched-link">
                             Book Now
                             <svg class="bi" aria-hidden="true">
                                 <use xlink:href="#chevron-right"></use>
-                            </svg> </a>
+                            </svg> 
+                        </a>
                     </div>
-                    <div class="col-auto d-none d-lg-block"> <svg aria-label="Placeholder: Thumbnail"
-                            class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img"
-                            width="200" xmlns="http://www.w3.org/2000/svg">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg> </div>
+                    <div class="col-auto d-none d-lg-block"> 
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400" alt="Swiss Alps" class="package-image">
+                    </div>
                 </div>
             </div>
         </div>
+
         <div class="row g-5">
             <div class="col-md-8">
                 <h3 class="pb-4 mb-4 fst-italic border-bottom">
                     Hear from our customers
                 </h3>
-                <!--Start of customer reviews -->
-                <!--fill in the stuff with text from the javascrip? -->
-                <article class="blog-post" id = "blog-post-1">
-                    <h2 class="display-5 link-body-emphasis mb-1">Sample customer review</h2>
-                    <p class="blog-post-meta">January 1, 2021 by <a href="#">Username</a></p>
-                    <p>user review text yada yada</p>
-                    <div class="col-auto d-none d-lg-block"> <svg aria-label="Placeholder: Thumbnail"
-                            class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img"
-                            width="200" xmlns="http://www.w3.org/2000/svg">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg> </div>
+
+                <!-- Review 1 -->
+                <article class="blog-post" id="blog-post-1">
+                    <h2 class="display-5 link-body-emphasis mb-1">Amazing Caribbean Experience!</h2>
+                    <p class="blog-post-meta">November 15, 2025 by <a href="#">Sarah M.</a></p>
+                    <p>Just returned from the Caribbean Paradise package and I'm still in awe! The resort was absolutely stunning with pristine beaches and crystal-clear waters.</p>
+                    <div class="my-3"> 
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600" alt="Caribbean Beach" class="review-image">
+                    </div>
                     <hr>
-                    <p>This is some
-                        additional paragraph placeholder content. It has been written to fill
-                        the available space and show how a longer snippet of text affects the
-                        surrounding content. We'll repeat it often to keep the demonstration
-                        flowing, so be on the lookout for this exact same string of text.</p>
-                    
+                    <p>The all-inclusive package was worth every penny. We enjoyed unlimited water sports, delicious meals at multiple restaurants, and the staff went above and beyond to make our stay memorable. The sunset cruise was the highlight of our trip! TripHaven made booking so easy and their customer service was responsive throughout. Highly recommend for anyone looking for a stress-free tropical vacation.</p>
                 </article>
-                <article class="blog-post" id = "blog-post-2">
-                    <h2 class="display-5 link-body-emphasis mb-1">Sample customer review</h2>
-                    <p class="blog-post-meta">January 1, 2021 by <a href="#">Username</a></p>
-                    <p>user review text yada yada</p>
-                    <div class="col-auto d-none d-lg-block"> <svg aria-label="Placeholder: Thumbnail"
-                            class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img"
-                            width="200" xmlns="http://www.w3.org/2000/svg">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg> </div>
+
+                <!-- Review 2 -->
+                <article class="blog-post" id="blog-post-2">
+                    <h2 class="display-5 link-body-emphasis mb-1">European Adventure of a Lifetime</h2>
+                    <p class="blog-post-meta">October 28, 2025 by <a href="#">Michael R.</a></p>
+                    <p>The European Adventure tour exceeded all expectations! Visiting Paris, Rome, and Barcelona in one trip was incredible.</p>
+                    <div class="my-3"> 
+                        <img src="https://images.unsplash.com/photo-1431274172761-fca41d930114?w=600" alt="Eiffel Tower" class="review-image">
+                    </div>
                     <hr>
-                    <p>This is some
-                        additional paragraph placeholder content. It has been written to fill
-                        the available space and show how a longer snippet of text affects the
-                        surrounding content. We'll repeat it often to keep the demonstration
-                        flowing, so be on the lookout for this exact same string of text.</p>
-                    
+                    <p>Our tour guide was knowledgeable and passionate about each city's history and culture. The hotels were centrally located with beautiful views, making it easy to explore on our own time. The Colosseum tour in Rome and Gothic Quarter walk in Barcelona were unforgettable. Transportation between cities was seamless and comfortable. This was my first time using TripHaven, and I'm already planning my next adventure with them!</p>
                 </article>
-                <article class="blog-post" id = "blog-post-3">
-                    <h2 class="display-5 link-body-emphasis mb-1">Sample customer review</h2>
-                    <p class="blog-post-meta">January 1, 2021 by <a href="#">Username</a></p>
-                    <p>user review text yada yada</p>
-                    <div class="col-auto d-none d-lg-block"> <svg aria-label="Placeholder: Thumbnail"
-                            class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img"
-                            width="200" xmlns="http://www.w3.org/2000/svg">
-                            <title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef"
-                                dy=".3em">Thumbnail</text>
-                        </svg> </div>
+
+                <!-- Review 3 -->
+                <article class="blog-post" id="blog-post-3">
+                    <h2 class="display-5 link-body-emphasis mb-1">Perfect Family Vacation in Asia</h2>
+                    <p class="blog-post-meta">September 12, 2025 by <a href="#">Jennifer L.</a></p>
+                    <p>Our family of five had an amazing time on the Asian Cultural Experience package. Thailand and Vietnam were magical!</p>
+                    <div class="my-3"> 
+                        <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600" alt="Thai Temple" class="review-image">
+                    </div>
                     <hr>
-                    <p>This is some
-                        additional paragraph placeholder content. It has been written to fill
-                        the available space and show how a longer snippet of text affects the
-                        surrounding content. We'll repeat it often to keep the demonstration
-                        flowing, so be on the lookout for this exact same string of text.</p>
-                    
+                    <p>The itinerary was perfectly balanced with activities for all ages. Our kids loved the elephant sanctuary and Thai cooking classes, while my husband and I enjoyed the temple visits and local markets. The hotels were family-friendly with spacious rooms and kid-friendly menus. TripHaven provided excellent recommendations that made our trip both educational and fun. The entire journey felt safe, well-planned, and culturally enriching. Can't wait to book our next family adventure!</p>
                 </article>
-                <nav class="blog-pagination" aria-label="Pagination"> <a class="btn btn-outline-primary rounded-pill"
-                        href="#">Older</a> <a class="btn btn-outline-secondary rounded-pill disabled"
-                        aria-disabled="true">Newer</a> </nav>
+
+                <nav class="blog-pagination" aria-label="Pagination"> 
+                    <a class="btn btn-outline-primary rounded-pill" href="reviews.html">View More Reviews</a> 
+                    <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newest</a> 
+                </nav>
             </div>
+
             <div class="col-md-4">
                 <div class="position-sticky" style="top: 2rem;">
                     <div class="p-4 mb-3 bg-body-tertiary rounded">
-                        <h4 class="fst-italic">About</h4>
-                        <p class="mb-0">Customize
-                            this section to tell your visitors a little bit about your publication,
-                            writers, content, or something else entirely. Totally up to you.</p>
+                        <h4 class="fst-italic">About TripHaven</h4>
+                        <p class="mb-0">Your trusted travel companion for unforgettable adventures worldwide. We curate the best packages, deals, and experiences to make your dream vacation a reality. Book with confidence and create memories that last a lifetime.</p>
                     </div>
-                    <div>
-                        <!-- Previous viewed deals/packages -->
 
-                        <h4 class="fst-italic">Previous viewed deals/packages</h4>
+                    <div>
+                        <h4 class="fst-italic">Recently Viewed Packages</h4>
                         <ul class="list-unstyled">
-                            <li> <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                                    href="#" id = "previous-viewed-package-1"> <svg aria-hidden="true" class="bd-placeholder-img " height="96"
-                                        preserveAspectRatio="xMidYMid slice" width="100%"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="100%" height="100%" fill="#777"></rect>
-                                    </svg>
+                            <li> 
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="#" id="previous-viewed-package-1"> 
+                                    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400" alt="Paris" class="sidebar-image">
                                     <div class="col-lg-8">
-                                        <h6 class="mb-0">default name</h6> <small
-                                            class="text-body-secondary">Date it expires or somthing idk</small>
+                                        <h6 class="mb-0">European Adventure</h6> 
+                                        <small class="text-body-secondary">Expires: Jan 15, 2026</small>
                                     </div>
-                                </a> </li>
-                            <li> <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                                    href="#" id = "previous-viewed-package-2"> <svg aria-hidden="true" class="bd-placeholder-img " height="96"
-                                        preserveAspectRatio="xMidYMid slice" width="100%"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="100%" height="100%" fill="#777"></rect>
-                                    </svg>
+                                </a> 
+                            </li>
+                            <li> 
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="#" id="previous-viewed-package-2"> 
+                                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400" alt="Beach" class="sidebar-image">
                                     <div class="col-lg-8">
-                                        <h6 class="mb-0">default name</h6> <small
-                                            class="text-body-secondary">Date it expires or somthing idk</small>
+                                        <h6 class="mb-0">Caribbean Paradise</h6> 
+                                        <small class="text-body-secondary">Expires: Dec 31, 2025</small>
                                     </div>
-                                </a> </li>
-                            <li> <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                                    href="#" id = "previous-viewed-package-3"> <svg aria-hidden="true" class="bd-placeholder-img " height="96"
-                                        preserveAspectRatio="xMidYMid slice" width="100%"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <rect width="100%" height="100%" fill="#777"></rect>
-                                    </svg>
+                                </a> 
+                            </li>
+                            <li> 
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="#" id="previous-viewed-package-3"> 
+                                    <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400" alt="Mountain" class="sidebar-image">
                                     <div class="col-lg-8">
-                                        <h6 class="mb-0">default name!</h6>
-                                        <small class="text-body-secondary">Date it expires or somthing idk</small>
+                                        <h6 class="mb-0">Mountain Retreat</h6>
+                                        <small class="text-body-secondary">Expires: Feb 28, 2026</small>
                                     </div>
-                                </a> </li>
+                                </a> 
+                            </li>
                         </ul>
                     </div>
+
                     <div class="p-4">
-                        <h4 class="fst-italic">list for somthing idk</h4>
+                        <h4 class="fst-italic">Popular Destinations</h4>
                         <ol class="list-unstyled mb-0">
-                            <!--
-                            <li><a href="#">March 2021</a></li>
-                            <li><a href="#">February 2021</a></li>
-                            <li><a href="#">January 2021</a></li>
-                            <li><a href="#">December 2020</a></li>
-                            <li><a href="#">November 2020</a></li>
-                            <li><a href="#">October 2020</a></li>
-                            <li><a href="#">September 2020</a></li>
-                            <li><a href="#">August 2020</a></li>
-                            <li><a href="#">July 2020</a></li>
-                            <li><a href="#">June 2020</a></li>
-                            <li><a href="#">May 2020</a></li>
-                            <li><a href="#">April 2020</a></li>
-                            -->
+                            <li><a href="travel.html">Caribbean Islands</a></li>
+                            <li><a href="travel.html">European Cities</a></li>
+                            <li><a href="travel.html">Southeast Asia</a></li>
+                            <li><a href="travel.html">Mountain Resorts</a></li>
+                            <li><a href="travel.html">Beach Getaways</a></li>
+                            <li><a href="travel.html">Cultural Tours</a></li>
                         </ol>
                     </div>
+
                     <div class="p-4">
-                        <h4 class="fst-italic">Some other list for somthing </h4>
+                        <h4 class="fst-italic">Connect With Us</h4>
                         <ol class="list-unstyled">
-                            <!--
-                            <li><a href="#">GitHub</a></li>
-                            <li><a href="#">Social</a></li>
                             <li><a href="#">Facebook</a></li>
-                            --> 
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter</a></li>
                         </ol>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
     <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
-        <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a
-                href="https://x.com/mdo">@mdo</a>.</p>
-        <p class="mb-0"> <a href="#">Back to top</a> </p>
+        <p>TripHaven - Your Adventure Begins Here | © 2025 TripHaven Inc.</p>
+        <p class="mb-0"> 
+            <a href="#">Privacy Policy</a> · 
+            <a href="#">Terms of Service</a> · 
+            <a href="#">Back to top</a> 
+        </p>
     </footer>
-    <script src="Blog%20Template%20%C2%B7%20Bootstrap%20v5.3_files/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        class="astro-vvvwv3sm"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

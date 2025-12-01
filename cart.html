@@ -1,256 +1,349 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TripHaven – Checkout</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shopping cart and checkout">
+    <title>Trip Haven: Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none
+        }
 
-  <!-- Bootstrap 5.3 Dark Theme -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        body {
+            background: #1a1a1a;
+        }
 
-  <style>
-  
-    .container { max-width: 960px; }
-    #titlebar {
-      background: rgba(30,30,30,0.75);
-      color: white;
-      text-align: center;
-      font-size: 32px;
-      padding: 12px;
-      border-radius: 6px;
-      margin: 25px auto;
-      font-weight: bold;
-      max-width: 960px;
-    }
-    .content-bg {
-      background: rgba(30,30,30,0.85);
-      padding: 25px;
-      border-radius: 6px;
-    }
-  </style>
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .checkout-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .cart-badge {
+            position: relative;
+            display: inline-block;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #dc3545;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="chevron-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+            </path>
+        </symbol>
+        <symbol id="cart" viewBox="0 0 16 16">
+            <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
+            </path>
+        </symbol>
+    </svg>
 
-<!-- HEADER -->
-<header class="border-bottom py-3 mb-3">
-  <div class="container d-flex flex-wrap justify-content-center">
-    <a href="index.html"
-      class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-white text-decoration-none fs-3 fw-bold">
-      TripHaven
-    </a>
+    <div class="container">
+        <header class="border-bottom lh-1 py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-4 pt-1">
+                    <a class="link-secondary" href="#"></a>
+                </div>
+                <div class="col-4 text-center">
+                    <a class="blog-header-logo text-body-emphasis text-decoration-none" href="index.html">TripHaven</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="link-secondary" href="#" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="mx-3" role="img" viewBox="0 0 24 24">
+                            <title>Search</title>
+                            <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                            <path d="M21 21l-5.2-5.2"></path>
+                        </svg>
+                    </a>
+                    <a class="link-secondary me-3 cart-badge" href="cart.html" aria-label="Cart">
+                        <svg class="bi" width="24" height="24">
+                            <use xlink:href="#cart"></use>
+                        </svg>
+                        <span class="cart-count" id="cartCount">3</span>
+                    </a>
+                    <a class="btn btn-sm btn-outline-secondary" href="signup.html">Sign up</a>
+                </div>
+            </div>
+        </header>
 
-    <ul class="nav">
-      <li class="nav-item"><a href="travel.html" class="nav-link text-white">Travel</a></li>
-      <li class="nav-item"><a href="reviews.html" class="nav-link text-white">Reviews</a></li>
-      <li class="nav-item"><a href="suggested_flights.html" class="nav-link text-white">Suggested Flights</a></li>
-      <li class="nav-item"><a href="discounts.html" class="nav-link text-white">Discounts</a></li>
-    </ul>
-  </div>
-</header>
-
-<div id="titlebar">Checkout</div>
-
-<div class="container content-bg">
-  <div class="row">
-
-    <!-- CART -->
-    <div class="col-md-4 order-md-2 mb-4">
-      <h4 class="d-flex justify-content-between align-items-center mb-3">
-        <span>Your cart</span>
-        <span class="badge bg-secondary rounded-pill">3</span>
-      </h4>
-
-      <ul class="list-group mb-3">
-        <li class="list-group-item d-flex justify-content-between">
-          <div>
-            <h6 class="my-0">Product name</h6>
-            <small>Brief description</small>
-          </div>
-          <span>$12</span>
-        </li>
-
-        <li class="list-group-item d-flex justify-content-between">
-          <div>
-            <h6 class="my-0">Second product</h6>
-            <small>Brief description</small>
-          </div>
-          <span>$8</span>
-        </li>
-
-        <li class="list-group-item d-flex justify-content-between">
-          <div>
-            <h6 class="my-0">Third item</h6>
-            <small>Brief description</small>
-          </div>
-          <span>$5</span>
-        </li>
-
-        <li class="list-group-item d-flex justify-content-between bg-dark text-success">
-          <div>
-            <h6 class="my-0">Promo code</h6>
-            <small>EXAMPLECODE</small>
-          </div>
-          <span>−$5</span>
-        </li>
-
-        <li class="list-group-item d-flex justify-content-between">
-          <span>Total (USD)</span>
-          <strong>$20</strong>
-        </li>
-      </ul>
-
-      <form class="card p-2 bg-dark">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Promo code">
-          <button type="submit" class="btn btn-secondary">Redeem</button>
+        <div class="nav-scroller py-1 mb-3 border-bottom">
+            <nav class="nav nav-underline justify-content-between">
+                <a class="nav-item nav-link link-body-emphasis" href="travel.html">Travel</a>
+                <a class="nav-item nav-link link-body-emphasis" href="reviews.html">Reviews</a>
+                <a class="nav-item nav-link link-body-emphasis" href="suggested_flights.html">Suggested Flights</a>
+                <a class="nav-item nav-link link-body-emphasis" href="discounts.html">Discounts</a>
+            </nav>
         </div>
-      </form>
     </div>
 
-    <!-- BILLING -->
-    <div class="col-md-8 order-md-1">
-      <h4 class="mb-3">Billing address</h4>
-
-      <form>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label class="form-label">First name</label>
-            <input class="form-control" required>
-          </div>
-
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Last name</label>
-            <input class="form-control" required>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Username</label>
-          <div class="input-group">
-            <span class="input-group-text">@</span>
-            <input class="form-control" required>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Email <span class="text-muted">(Optional)</span></label>
-          <input type="email" class="form-control">
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Address</label>
-          <input class="form-control" required>
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
-          <input class="form-control">
-        </div>
+    <main class="content-section">
+        <h1 class="checkout-title">Checkout</h1>
 
         <div class="row">
-          <div class="col-md-5 mb-3">
-            <label class="form-label">Country</label>
-            <select class="form-select" required>
-              <option value="">Choose...</option>
-              <option>United States</option>
-            </select>
-          </div>
+            <!-- CART SUMMARY -->
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-white">Your cart</span>
+                    <span class="badge bg-secondary rounded-pill">3</span>
+                </h4>
 
-          <div class="col-md-4 mb-3">
-            <label class="form-label">State</label>
-            <select class="form-select" required>
-              <option value="">Choose...</option>
-              <option>California</option>
-            </select>
-          </div>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                        <div>
+                            <h6 class="my-0">Caribbean Paradise Package</h6>
+                            <small class="text-body-secondary">7 nights, all-inclusive</small>
+                        </div>
+                        <span class="text-body-secondary">$1,399</span>
+                    </li>
 
-          <div class="col-md-3 mb-3">
-            <label class="form-label">Zip</label>
-            <input class="form-control" required>
-          </div>
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                        <div>
+                            <h6 class="my-0">European Adventure Tour</h6>
+                            <small class="text-body-secondary">10 days, 3 cities</small>
+                        </div>
+                        <span class="text-body-secondary">$1,874</span>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                        <div>
+                            <h6 class="my-0">Asian Cultural Experience</h6>
+                            <small class="text-body-secondary">8 nights, guided tours</small>
+                        </div>
+                        <span class="text-body-secondary">$1,079</span>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between bg-success-subtle">
+                        <div class="text-success">
+                            <h6 class="my-0">Promo code</h6>
+                            <small>WELCOME25</small>
+                        </div>
+                        <span class="text-success">−$500</span>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span class="fw-bold">Total (USD)</span>
+                        <strong>$3,852</strong>
+                    </li>
+                </ul>
+
+                <form class="card p-2" onsubmit="applyPromo(event)">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="promoCode" placeholder="Promo code">
+                        <button type="submit" class="btn btn-secondary">Redeem</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- BILLING FORM -->
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3 text-white">Billing address</h4>
+
+                <form onsubmit="handleCheckout(event)">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">First name</label>
+                            <input class="form-control" type="text" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Last name</label>
+                            <input class="form-control" type="text" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <div class="input-group">
+                            <span class="input-group-text">@</span>
+                            <input class="form-control" type="text" placeholder="Username" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email <span class="text-muted">(Optional)</span></label>
+                        <input type="email" class="form-control" placeholder="you@example.com">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Address</label>
+                        <input class="form-control" type="text" placeholder="1234 Main St" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+                        <input class="form-control" type="text" placeholder="Apartment or suite">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5 mb-3">
+                            <label class="form-label">Country</label>
+                            <select class="form-select" required>
+                                <option value="">Choose...</option>
+                                <option>United States</option>
+                                <option>Canada</option>
+                                <option>Mexico</option>
+                                <option>United Kingdom</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">State</label>
+                            <select class="form-select" required>
+                                <option value="">Choose...</option>
+                                <option>California</option>
+                                <option>New York</option>
+                                <option>Texas</option>
+                                <option>Florida</option>
+                                <option>Ohio</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label class="form-label">Zip</label>
+                            <input class="form-control" type="text" required>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="same-address">
+                        <label class="form-check-label" for="same-address">
+                            Shipping address same as billing
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="save-info">
+                        <label class="form-check-label" for="save-info">
+                            Save info for next time
+                        </label>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h4 class="mb-3 text-white">Payment</h4>
+
+                    <div class="my-3">
+                        <div class="form-check">
+                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked
+                                required>
+                            <label class="form-check-label" for="credit">Credit card</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                            <label class="form-check-label" for="debit">Debit card</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                            <label class="form-check-label" for="paypal">PayPal</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Name on card</label>
+                            <input class="form-control" type="text" required>
+                            <small class="text-muted">Full name as displayed on card</small>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Card number</label>
+                            <input class="form-control" type="text" placeholder="1234 5678 9012 3456" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label class="form-label">Expiration</label>
+                            <input class="form-control" type="text" placeholder="MM/YY" required>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <label class="form-label">CVV</label>
+                            <input class="form-control" type="text" placeholder="123" required>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <button class="btn btn-primary btn-lg w-100" type="submit">
+                        Complete Purchase
+                    </button>
+                </form>
+            </div>
         </div>
+    </main>
 
-        <hr class="my-4">
+    <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+        <p>TripHaven - Your Adventure Begins Here | © 2025 TripHaven Inc.</p>
+        <p class="mb-0"> 
+            <a href="#">Privacy Policy</a> · 
+            <a href="#">Terms of Service</a> · 
+            <a href="#">Back to top</a> 
+        </p>
+    </footer>
 
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="same-address">
-          <label class="form-check-label" for="same-address">
-            Shipping address same as billing
-          </label>
-        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="save-info">
-          <label class="form-check-label" for="save-info">
-            Save info for next time
-          </label>
-        </div>
+    <script>
+        function applyPromo(event) {
+            event.preventDefault();
+            const promoCode = document.getElementById('promoCode').value;
+            
+            if (promoCode) {
+                alert(`Promo code "${promoCode}" applied!\n\nChecking validity...`);
+            } else {
+                alert('Please enter a promo code.');
+            }
+        }
 
-        <hr class="my-4">
-
-        <h4 class="mb-3">Payment</h4>
-
-        <div class="my-3">
-          <div class="form-check">
-            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked>
-            <label class="form-check-label" for="credit">Credit card</label>
-          </div>
-
-          <div class="form-check">
-            <input id="debit" name="paymentMethod" type="radio" class="form-check-input">
-            <label class="form-check-label" for="debit">Debit card</label>
-          </div>
-
-          <div class="form-check">
-            <input id="paypal" name="paymentMethod" type="radio" class="form-check-input">
-            <label class="form-check-label" for="paypal">Paypal</label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Name on card</label>
-            <input class="form-control" required>
-          </div>
-
-          <div class="col-md-6 mb-3">
-            <label class="form-label">Card number</label>
-            <input class="form-control" required>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-3 mb-3">
-            <label class="form-label">Expiration</label>
-            <input class="form-control" required>
-          </div>
-
-          <div class="col-md-3 mb-3">
-            <label class="form-label">CVV</label>
-            <input class="form-control" required>
-          </div>
-        </div>
-
-        <hr class="my-4">
-
-        <button class="btn btn-primary btn-lg w-100" type="submit">
-          Continue to checkout
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <footer class="my-5 pt-5 text-center">
-    <p class="mb-1">© 2025 Company Name</p>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a href="#">Privacy</a></li>
-      <li class="list-inline-item"><a href="#">Terms</a></li>
-      <li class="list-inline-item"><a href="#">Support</a></li>
-    </ul>
-  </footer>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        function handleCheckout(event) {
+            event.preventDefault();
+            alert('Thank you for your purchase!\n\nYour booking has been confirmed.\n\nYou will receive a confirmation email shortly.');
+            // window.location.href = 'index.html';
+        }
+    </script>
 </body>
+
 </html>
