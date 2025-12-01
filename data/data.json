@@ -1,0 +1,70 @@
+{
+  "packages": [
+    {
+      "id": 1,
+      "badgeClass": "text-primary-emphasis",
+      "badgeText": "Travel Package",
+      "title": "Caribbean Paradise",
+      "validUntil": "Dec 31, 2025",
+      "description": "Experience pristine beaches and crystal-clear waters in Jamaica. All-inclusive resort with meals, drinks, and water sports included.",
+      "img": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400"
+    },
+    {
+      "id": 2,
+      "badgeClass": "text-success-emphasis",
+      "badgeText": "Featured Deal",
+      "title": "European Adventure",
+      "validUntil": "Jan 15, 2026",
+      "description": "Explore Paris, Rome, and Barcelona in 10 unforgettable days. Guided tours, hotels, and transportation included.",
+      "img": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400"
+    },
+    {
+      "id": 3,
+      "badgeClass": "text-warning-emphasis",
+      "badgeText": "Hot Offer",
+      "title": "Asian Discovery",
+      "validUntil": "Nov 30, 2025",
+      "description": "Discover Thailand and Vietnam's rich culture, temples, and cuisine. Perfect for families and adventurers alike.",
+      "img": "https://images.unsplash.com/photo-1528181304800-259b08848526?w=400"
+    },
+    {
+      "id": 4,
+      "badgeClass": "text-danger-emphasis",
+      "badgeText": "Limited Time",
+      "title": "Mountain Retreat",
+      "validUntil": "Feb 28, 2026",
+      "description": "Escape to the Swiss Alps for skiing, hiking, and breathtaking mountain views. Cozy lodges and gourmet dining await.",
+      "img": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400"
+    }
+  ],
+
+  "reviews": [
+    {
+      "id": 1,
+      "title": "Amazing Caribbean Experience!",
+      "date": "November 15, 2025",
+      "author": "Sarah M.",
+      "text1": "Just returned from the Caribbean Paradise package and I'm still in awe! The resort was absolutely stunning with pristine beaches and crystal-clear waters.",
+      "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600",
+      "text2": "The all-inclusive package was worth every penny. We enjoyed unlimited water sports, delicious meals, and amazing service. Highly recommend this tropical escape!"
+    },
+    {
+      "id": 2,
+      "title": "European Adventure of a Lifetime",
+      "date": "October 28, 2025",
+      "author": "Michael R.",
+      "text1": "The European Adventure tour exceeded all expectations! Visiting Paris, Rome, and Barcelona in one trip was incredible.",
+      "image": "https://images.unsplash.com/photo-1431274172761-fca41d930114?w=600",
+      "text2": "Our guide was knowledgeable and passionate. Hotels were central, transportation smooth—an unforgettable journey!"
+    },
+    {
+      "id": 3,
+      "title": "Perfect Family Vacation in Asia",
+      "date": "September 12, 2025",
+      "author": "Jennifer L.",
+      "text1": "Our family loved the Asian Cultural Experience package. Thailand and Vietnam were magical!",
+      "image": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600",
+      "text2": "Balanced itinerary, kid-friendly hotels, and enriching cultural activities. A safe, fun family adventure!"
+    }
+  ]
+}
