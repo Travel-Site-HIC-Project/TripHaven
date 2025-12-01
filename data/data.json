@@ -1,37 +1,49 @@
 {
   "packages": [
     {
-      "id": 1,
-      "badgeClass": "text-primary-emphasis",
-      "badgeText": "Travel Package",
+      "pack_id": 1,
       "title": "Caribbean Paradise",
+      "hotel": ["Ja1"],
+      "flight": ["Ja1"],
+      "country": ["Jamaica"],
+      "badgeText": "Travel Package",
       "validUntil": "Dec 31, 2025",
       "description": "Experience pristine beaches and crystal-clear waters in Jamaica. All-inclusive resort with meals, drinks, and water sports included.",
       "img": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400"
     },
     {
-      "id": 2,
+      "pack_id": 2,
+      "title": "European Adventure",
+      "hotel": ["Fr1", "It1", "Sp1"],
+      "flight": ["Fr1", "It1", "Sp1"],
+      "country": ["France", "Italy", "Spain"],
+      "city": ["Paris", "Rome", "Barcelona"],
       "badgeClass": "text-success-emphasis",
       "badgeText": "Featured Deal",
-      "title": "European Adventure",
       "validUntil": "Jan 15, 2026",
       "description": "Explore Paris, Rome, and Barcelona in 10 unforgettable days. Guided tours, hotels, and transportation included.",
       "img": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400"
     },
     {
-      "id": 3,
+      "pack_id": 3,
+      "title": "Asian Discovery",
+      "hotel": ["Th1", "Vi1"],
+      "flight": ["Th1", "Vi1"],
+      "country": ["Thailand", "Vietnam"],
       "badgeClass": "text-warning-emphasis",
       "badgeText": "Hot Offer",
-      "title": "Asian Discovery",
       "validUntil": "Nov 30, 2025",
       "description": "Discover Thailand and Vietnam's rich culture, temples, and cuisine. Perfect for families and adventurers alike.",
       "img": "https://images.unsplash.com/photo-1528181304800-259b08848526?w=400"
     },
     {
-      "id": 4,
+      "pack_id": 4,
+      "title": "Mountain Retreat",
+      "hotel": ["Sw1"],
+      "flight": ["Sw1"],
+      "country": ["Switzerland"],
       "badgeClass": "text-danger-emphasis",
       "badgeText": "Limited Time",
-      "title": "Mountain Retreat",
       "validUntil": "Feb 28, 2026",
       "description": "Escape to the Swiss Alps for skiing, hiking, and breathtaking mountain views. Cozy lodges and gourmet dining await.",
       "img": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400"
@@ -40,7 +52,7 @@
 
   "reviews": [
     {
-      "id": 1,
+      "rev_id": 1,
       "title": "Amazing Caribbean Experience!",
       "date": "November 15, 2025",
       "author": "Sarah M.",
@@ -49,7 +61,7 @@
       "text2": "The all-inclusive package was worth every penny. We enjoyed unlimited water sports, delicious meals, and amazing service. Highly recommend this tropical escape!"
     },
     {
-      "id": 2,
+      "rev_id": 2,
       "title": "European Adventure of a Lifetime",
       "date": "October 28, 2025",
       "author": "Michael R.",
@@ -58,7 +70,7 @@
       "text2": "Our guide was knowledgeable and passionate. Hotels were central, transportation smooth—an unforgettable journey!"
     },
     {
-      "id": 3,
+      "rev_id": 3,
       "title": "Perfect Family Vacation in Asia",
       "date": "September 12, 2025",
       "author": "Jennifer L.",
@@ -66,5 +78,101 @@
       "image": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600",
       "text2": "Balanced itinerary, kid-friendly hotels, and enriching cultural activities. A safe, fun family adventure!"
     }
+  ],
+
+  "hotels": [
+    {
+    "hot_id": "Ja1",
+    "name": "ROK",
+    "country": "Jamaica",
+    "price": 161.00
+    },
+    {
+    "hot_id": "Fr1",
+    "name": "Normandy Le Chantier",
+    "country": "France",
+    "city": "Paris",
+    "price": 232.00
+    },
+    {
+    "hot_id": "It1",
+    "name": "Vicoria Rooms",
+    "country": "Italy",
+    "city": "Rome",
+    "price": 138.00
+    },
+    {
+    "hot_id": "Sp1",
+    "country": "Spain",
+    "name": "Moxy",
+    "city": "Barcelona",
+    "price": 107.00
+    },
+    {
+    "hot_id": "Th1",
+    "name": "Emporium Suites",
+    "country": "Thailand",
+    "price": 130.00
+    },
+    {
+    "hot_id": "Vi1",
+    "name": "Sheraton",
+    "country": "Vietnam",
+    "price": 72.00
+    },
+    {
+    "hot_id": "Sw1",
+    "name": "citizenM",
+    "country": "Switzerland",
+    "price": 233.00
+    }
+  ],
+  "flights": [
+    {
+    "fli_id": "Ja1",
+    "code": "KIN",
+    "country": "Jamaica",
+    "price": 906.00
+    },
+    {
+    "fli_id": "Fr1",
+    "code": "PAR",
+    "country": "France",
+    "city": "Paris",
+    "price": 2095.00
+    },
+    {
+    "fli_id": "It1",
+    "code": "ROM",
+    "country": "Italy",
+    "city": "Rome",
+    "price": 1945.00
+    },
+    {
+    "fli_id": "Sp1",
+    "code": "BCN",
+    "country": "Spain",
+    "city": "Barcelona",
+    "price": 1583.00
+    },
+    {
+    "fli_id": "Th1",
+    "code": "BKK",
+    "country": "Thailand",
+    "price": 1987.00
+    },
+    {
+    "fli_id": "Vi1",
+    "code": "SGN",
+    "country": "Vietnam",
+    "price": 1703.00
+    },
+    {
+    "fli_id": "Sw1",
+    "code": "ZRH",
+    "country": "Switzerland",
+    "price": 1883.00
+    }
+
   ]
 }
